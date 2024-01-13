@@ -32,7 +32,7 @@ function moveToSlide (n) {
     const targetSlide = Number(centerSlide.id) + 1;
     removeStyles();
     moveToSlide(targetSlide);
-  }, 3000);
+  }, 5000);
 }
 
 function styleSlides () {
