@@ -1,4 +1,5 @@
 import './styles.css';
+import { moveToSlide, sliderListeners } from './imgcarousel';
 
 const menuItems = document.querySelectorAll('.item');
 
@@ -17,3 +18,6 @@ function makeVisible (e) {
   if (!menu) return;
   menu.classList.add('visible');
 }
+
+moveToSlide(1);
+sliderListeners();

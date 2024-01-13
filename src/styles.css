@@ -67,17 +67,18 @@
   font-size: 0.85rem;
   height: min-content;
   position: absolute;
+  z-index: 2;
   opacity: 0.1;
   top: 50px;
   left : -6px;
 }
 
-.visible {
+.navbar .visible {
   visibility: visible;
   opacity: 1;
   transform: translateY(10px); 
-  transition: opacity 300ms ease-in-out 100ms,
-              transform 300ms ease-in-out 300ms;
+  transition: opacity 550ms ease-in-out 0ms,
+              transform 300ms ease-in-out 100ms;
 }
 
 .navbar .menu-item {
@@ -102,7 +103,111 @@
   list-style: none;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 #content > h1 {
   margin-top: 1rem;
   text-align: center;
+}
+
+.carousel-container {
+  width: 980px;
+  height: 500px;
+  border-radius: 5px;
+  background: #444;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: 1fr 40px;
+  justify-items: center;
+  align-items: center;
+  padding: 2px 0.25rem;
+}
+
+.slideshow {
+  background: linen;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+  width: 880px;
+  height: 448px;
+  grid-column: 2 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 440px;
+  height: 440px;
+  position: absolute;
+  visibility: hidden;
+  top: 3px;
+  opacity: 0;
+}
+
+.slide > * {
+  width: 100%;
+  height: 440px;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.center {
+  width: 600px;
+  left: 140px;
+  opacity: 1;
+  z-index: 1;
+  transition: 200ms opacity ease-in-out 0ms,
+              400ms left ease-in-out 10ms;
+}
+
+.left {
+  left: -316px;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.right {
+  left: 756px;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.slider {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-radius: 8px;
+  height: 100px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+}
+
+.indicator {
+  border: 1px solid orange;
+  grid-row: 2;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18%;
+  padding: 8px;
+}
+
+.indicator > .indicator-button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: orange;
+  cursor: pointer;
 }
